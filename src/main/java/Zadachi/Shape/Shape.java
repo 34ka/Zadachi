@@ -24,16 +24,13 @@ overriding
 
 
 пока без интерфейсаинверфейсы
-
-
-
  */
 
-abstract class Shape {
-    public abstract double getVolume();
+abstract class Shape {// экземпляр абстрактного класса создать нельзя
+    public abstract double getVolume();// Метод абстрактный. Его удобно override(переопределять) в других классах
 }
 
-abstract class SolidOfRevolution extends Shape {
+abstract class SolidOfRevolution extends Shape {//экземпляр абстрактного класса создать нельзя
     protected double radius;//Access modifier Protected. Видимость = видимости Default + Видимость для классов детей этого protected класса. Дети могут быть в этом пакете и в других.
 
     public SolidOfRevolution(double radius) {//конструктор никогда не имеет return. Имя всегда совпадает с именем класса.
@@ -59,7 +56,6 @@ class Cyclinder extends SolidOfRevolution {
         return Math.PI * radius * radius * height;
     }
 }
-
 
 
 class Ball extends SolidOfRevolution {
@@ -127,9 +123,8 @@ class Box extends Shape {
 
         System.out.println(box1.add(pyramid1));
 
+
         System.out.println(box1.add(cyclinder1));
-
-
     }
 }
 
