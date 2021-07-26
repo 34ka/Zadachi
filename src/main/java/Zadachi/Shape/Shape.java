@@ -37,7 +37,7 @@ abstract class SolidOfRevolution extends Shape {//экземпляр абстр�
         this.radius = radius;
     }
 
-    public double getRadius () {//метод всегда имеет return. Имя можно указывать любое.
+    public double getRadius () {//метод всегда имеет return(кроме void). Имя можно указывать любое.
         return radius;
     }
 }
