@@ -34,7 +34,7 @@ abstract class Shape {
 }
 
 abstract class SolidOfRevolution extends Shape {
-    double radius;
+    protected double radius;//Access modifier Protected. Видимость = видимости Default + Видимость для классов детей этого protected класса. Дети могут быть в этом пакете и в других.
 
     public SolidOfRevolution(double radius) {//конструктор никогда не имеет return. Имя всегда совпадает с именем класса.
         this.radius = radius;
