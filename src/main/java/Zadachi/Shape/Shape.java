@@ -68,7 +68,7 @@ class Ball extends SolidOfRevolution {
 
     @Override
     public double getVolume() {
-        return 4 / 3 * Math.PI * radius * radius * radius;
+        return  Math.PI * radius * radius * radius * 4 / 3;
     }
 }
 
@@ -84,7 +84,7 @@ class Pyramid extends Shape {
 
     @Override
     public double getVolume() {// идея симплементировала сама этот метод. Нужно было формулу объём подставить правильную, а была просто return 0
-        return 1 / 3 * s * h;
+        return s * h * 1 / 3;
     }
 }
 
@@ -121,17 +121,14 @@ class Box extends Shape {
         Cyclinder cyclinder1 = new Cyclinder(4.15, 10.15);
         Ball ball1 = new Ball(15.95);
         Ball ball2 = new Ball(100.78);
-        Pyramid pyramid1 = new Pyramid(26.43, 34.123);
+        Pyramid pyramid1 = new Pyramid(75.7, 25.78);
         Box box1 = new Box(500000);
 
-        System.out.println(box1.add(ball1));
-        System.out.println(box1.capacity);
-        //System.out.println(box1.add(ball2));
-        System.out.println(box1.capacity);
-        System.out.println(box1.add(pyramid1));
-        System.out.println(box1.capacity);
-        System.out.println(box1.add(cyclinder1));
-        System.out.println(box1.capacity);
+
+        System.out.println("ball1 " + box1.add(ball1) + " " + box1.capacity);
+        System.out.println("ball2 " + box1.add(ball2) + " " + box1.capacity);
+        System.out.println("pyramid1 " + box1.add(pyramid1) + " " + box1.capacity);
+        System.out.println("cyclinder1 " + box1.add(cyclinder1) + " " + box1.capacity);
     }
 }
 
