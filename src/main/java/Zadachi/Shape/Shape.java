@@ -26,6 +26,8 @@ overriding
 пока без интерфейсаинверфейсы
  */
 
+import java.util.ArrayList;
+
 abstract class Shape {// экземпляр абстрактного класса создать нельзя
     public abstract double getVolume();// Метод абстрактный. Его удобно override(переопределять) в других классах
 }
@@ -33,11 +35,11 @@ abstract class Shape {// экземпляр абстрактного класс�
 abstract class SolidOfRevolution extends Shape {//экземпляр абстрактного класса создать нельзя
     protected double radius;//Access modifier Protected. Видимость = видимости Default + Видимость для классов детей этого protected класса. Дети могут быть в этом пакете и в других.
 
-    public SolidOfRevolution(double radius) {//конструктор никогда не имеет return. Имя всегда совпадает с именем класса.
+    public SolidOfRevolution(double radius) {//конструктор никогда не имеет return. имя всегда совпадает с именем класса.
         this.radius = radius;
     }
 
-    public double getRadius () {//метод всегда имеет return(кроме void). Имя можно указывать любое.
+    public double getRadius () {//метод всегда имеет return(кроме void), имя можно указывать любое.
         return radius;
     }
 }
@@ -90,6 +92,8 @@ class Pyramid extends Shape {
 class Box extends Shape {
     private double capacity;
     private double volume;
+    private ArrayList<Shape> figures = new ArrayList<>();//Я указал, что элементами ArrayList могут быть только элементы типа данных Shape.
+
 
     @Override
     public double getVolume() {// идея симплементировала сама этот метод. Нужно было формулу объём подставить правильную, а была просто return 0
@@ -103,6 +107,8 @@ class Box extends Shape {
 
     public boolean add(Shape figure) {// т.к. любой класс это тип данных то, создаём в параметрах ссылочную переменную figure типа данных Shape
         if(capacity >= figure.getVolume()) {
+            figures.add(figure);// добавляем через .add в Arraylist figures нашу фигуру из класса Shape
+            capacity = capacity - figure.getVolume();//после добавления фигуры из общей вместимости вычитаем объём фигуры
             return true;
         } else {
             return false;
@@ -119,12 +125,13 @@ class Box extends Shape {
         Box box1 = new Box(500000);
 
         System.out.println(box1.add(ball1));
-        System.out.println(box1.add(ball2));
-
+        System.out.println(box1.capacity);
+        //System.out.println(box1.add(ball2));
+        System.out.println(box1.capacity);
         System.out.println(box1.add(pyramid1));
-
-
+        System.out.println(box1.capacity);
         System.out.println(box1.add(cyclinder1));
+        System.out.println(box1.capacity);
     }
 }
 
