@@ -1,13 +1,16 @@
 package zadachi.shape;
 
 
-class Pyramid extends Shape {
+public class Pyramid extends Shape {
     private double s;
     private double h;
 
     public Pyramid(double s, double h) {
         this.s = s;
         this.h = h;
+        if (s < 0 || h < 0) {
+            throw new IllegalArgumentException("Arguments are not be 0");
+        }
     }
 
     @Override
