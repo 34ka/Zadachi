@@ -4,6 +4,9 @@ public class Ball extends SolidOfRevolution {
 
     public Ball(double radius) {
         super(radius);
+        if (radius < 0) {
+            throw new IllegalArgumentException("Arguments are not be 0");
+        }
     }
 
     @Override
