@@ -3,7 +3,7 @@ package zadachi.shape;
 
 import java.util.Objects;
 
-public class Pyramid extends Shape {
+public class Pyramid implements Shape {
     private double s;
     private double h;
 

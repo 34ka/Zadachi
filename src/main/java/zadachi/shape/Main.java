@@ -29,7 +29,7 @@ overriding
 public class Main  {
 
     public static void main(String[] args) {
-        Shape cyclinder1 = new Cylinder(4.15, 10.15);
+        Shape cylinder1 = new Cylinder(4.15, 10.15);
         Shape ball1 = new Ball(15.95);
         Shape ball2 = new Ball(100.78);
         Shape pyramid1 = new Pyramid(75.7, 25.78);
@@ -40,9 +40,9 @@ public class Main  {
         System.out.println("ball1 " + box1.add(ball1) + " " + box1.getCapacity());
         System.out.println("ball2 " + box1.add(ball2) + " " + box1.getCapacity());
         System.out.println("pyramid1 " + box1.add(pyramid1) + " " + box1.getCapacity());
-        System.out.println("cyclinder1 " + box1.add(cyclinder1) + " " + box1.getCapacity());
+        System.out.println("cyclinder1 " + box1.add(cylinder1) + " " + box1.getCapacity());
         System.out.println();
-        box1.removeFigure(cyclinder1);
+        box1.removeFigure(cylinder1);
         System.out.println("cyclinder1 " + box1.getCapacity());
         box1.getFigures();
         System.out.println();

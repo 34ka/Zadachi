@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Box extends Shape {
+public class Box implements Shape {
     private double capacity;
     private double volume;
     private List<Shape> figures = new ArrayList<>(5);//Указал, что элементами ArrayList могут быть только элементы типа данных Shape и вмещаемость 15 элементов
