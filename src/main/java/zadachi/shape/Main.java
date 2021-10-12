@@ -34,6 +34,7 @@ public class Main  {
         Shape ball2 = new Ball(100.78);
         Shape pyramid1 = new Pyramid(75.7, 25.78);
         Box box1 = new Box(500000);
+        System.out.println(box1.getCapacity());
 
 
         System.out.println("ball1 " + box1.add(ball1) + " " + box1.getCapacity());
@@ -41,8 +42,16 @@ public class Main  {
         System.out.println("pyramid1 " + box1.add(pyramid1) + " " + box1.getCapacity());
         System.out.println("cyclinder1 " + box1.add(cyclinder1) + " " + box1.getCapacity());
         System.out.println();
+        box1.removeFigure(cyclinder1);
+        System.out.println("cyclinder1 " + box1.getCapacity());
+        box1.getFigures();
+        System.out.println();
         System.out.println(box1.toString());
+        box1.clearFigures();
 
+        System.out.println(box1.getFigures());
+        System.out.println(box1.getCapacity());
+        System.out.println(box1.toString());
     }
 }
 
