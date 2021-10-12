@@ -1,5 +1,7 @@
 package zadachi.shape;
 
+import java.util.Objects;
+
 public class Cylinder extends SolidOfRevolution {
     private double height;
 
@@ -21,4 +23,20 @@ public class Cylinder extends SolidOfRevolution {
         return " this is cylinder with radius = " + radius;
     }
 
+    @Override
+    public boolean equals (Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Cylinder)) {
+            return false;
+        }
+        Cylinder cylinder = (Cylinder) o;
+        return getVolume() == cylinder.getVolume() && Objects.equals(toString(), cylinder.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getVolume());
+    }
 }

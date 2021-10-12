@@ -1,5 +1,7 @@
 package zadachi.shape;
 
+import java.util.Objects;
+
 public class Ball extends SolidOfRevolution {
 
     public Ball(double radius) {
@@ -17,5 +19,22 @@ public class Ball extends SolidOfRevolution {
     @Override
     public String toString() {
         return " this is ball with radius = " + radius;
+    }
+
+    @Override
+    public boolean equals (Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Ball)) {
+            return false;
+        }
+        Ball ball = (Ball) o;
+        return getVolume() == ball.getVolume() && Objects.equals(toString(), ball.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getVolume());
     }
 }

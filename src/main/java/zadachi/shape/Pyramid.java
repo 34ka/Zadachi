@@ -1,6 +1,8 @@
 package zadachi.shape;
 
 
+import java.util.Objects;
+
 public class Pyramid extends Shape {
     private double s;
     private double h;
@@ -21,5 +23,22 @@ public class Pyramid extends Shape {
     @Override
     public String toString() {
         return " this is pyramid with s = " + s;
+    }
+
+    @Override
+    public boolean equals (Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Pyramid)) {
+            return false;
+        }
+        Pyramid pyramid = (Pyramid) o;
+        return getVolume() == pyramid.getVolume() && Objects.equals(toString(), pyramid.toString());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getVolume());
     }
 }
