@@ -84,5 +84,6 @@ public class ShapeTests {
         Pyramid pyramid = new Pyramid(50, 25);
         String expected = " this is pyramid with s = 50.0";
         Assertions.assertEquals(pyramid.toString(), expected);
+
     }
 }
